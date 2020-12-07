@@ -9,22 +9,30 @@ import { createStore } from "redux";
 const initial = {
     player1: 0,
     player2: 0,
+    server: 1,
 };
 
 // reducer
 
+const player1 = (state) => ({
+    ...state,
+    player1: state.player1 + 1,
+});
+const player2 = (state) => ({
+    ...state,
+    player2: state.player2 + 1,
+});
+const server = (state) => ({
+    ...state,
+    server: (Math.floor((state.player1 + state.player2) / 5) % 2) + 1,
+});
+
 const reducer = (state, action) => {
     switch (action.type) {
         case "INCREMENT1":
-            return {
-                ...state,
-                player1: state.player1 + 1,
-            };
+            return server(player1(state));
         case "INCREMENT2":
-            return {
-                ...state,
-                player2: state.player2 + 1,
-            };
+            return server(player2(state));
         case "RESET":
             return initial;
         default:
@@ -44,6 +52,7 @@ const render = () => {
             <App
                 player1={state.player1}
                 player2={state.player2}
+                serving={state.server}
                 handleIncrement1={() => store.dispatch({ type: "INCREMENT1" })}
                 handleIncrement2={() => store.dispatch({ type: "INCREMENT2" })}
                 handleReset={() => store.dispatch({ type: "RESET" })}
