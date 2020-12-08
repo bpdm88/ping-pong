@@ -2,6 +2,7 @@ const App = ({
     player1,
     player2,
     serving,
+    winner,
     handleIncrement1,
     handleIncrement2,
     handleReset,
@@ -59,10 +60,9 @@ const App = ({
             </div>
         </div>
 
-        {/* winner message */}
-        <h2 className="alert alert-success">
-            Player {/* winning player here */} wins!
-        </h2>
+        {winner === 0 ? null : (
+            <h2 className="alert alert-success">Player {winner} wins!</h2>
+        )}
 
         <hr />
 
