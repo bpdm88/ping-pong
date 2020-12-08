@@ -1,3 +1,8 @@
+import PlayerScore from "../src/components/PlayerScore";
+import Header from "../src/components/Header";
+import Winner from "../src/components/Winner";
+import Reset from "../src/components/Reset";
+
 const App = ({
     player1,
     player2,
@@ -8,67 +13,28 @@ const App = ({
     handleReset,
 }) => (
     <>
-        {/* header */}
-        <header className="jumbotron mt-4 mb-0">
-            <h1>PongPing</h1>
-        </header>
+        <Header title="PING PONG" />
 
-        {/* scores */}
         <div className="row mb-4">
-            <div className="col-md-6 mt-4">
-                <div
-                    className={
-                        "card text-center " +
-                        (serving === 1 ? "bg-dark text-white" : "")
-                    }
-                >
-                    <h5 className="card-header">Player 1</h5>
-                    <div className="card-body">
-                        <p className="card-text display-1">{player1}</p>
-                    </div>
-                    <div className="card-footer">
-                        <button
-                            onClick={handleIncrement1}
-                            className="form-control btn btn-success"
-                        >
-                            +
-                        </button>
-                    </div>
-                </div>
-            </div>
+            <PlayerScore
+                player={player1}
+                serving={serving === 1}
+                handleIncrement={handleIncrement1}
+                name="Player 1"
+            />
 
-            <div className="col-md-6 mt-4">
-                <div
-                    className={
-                        "card text-center " +
-                        (serving === 2 ? "bg-dark text-white" : "")
-                    }
-                >
-                    <h5 className="card-header">Player 2</h5>
-                    <div className="card-body">
-                        <p className="card-text display-1">{player2}</p>
-                    </div>
-                    <div className="card-footer">
-                        <button
-                            onClick={handleIncrement2}
-                            className="form-control btn btn-success"
-                        >
-                            +
-                        </button>
-                    </div>
-                </div>
-            </div>
+            <PlayerScore
+                player={player2}
+                serving={serving === 2}
+                handleIncrement={handleIncrement2}
+                name="Player 2"
+            />
         </div>
-
-        {winner === 0 ? null : (
-            <h2 className="alert alert-success">Player {winner} wins!</h2>
-        )}
+        <Winner winner={winner} />
 
         <hr />
 
-        <button onClick={handleReset} className="btn btn-danger">
-            Reset
-        </button>
+        <Reset handleReset={handleReset} />
     </>
 );
 
