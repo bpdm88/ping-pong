@@ -21,6 +21,7 @@ const App = ({
                 serving={serving === 1}
                 handleIncrement={handleIncrement1}
                 name="Player 1"
+                disabled={winner > 0}
             />
 
             <PlayerScore
@@ -28,6 +29,7 @@ const App = ({
                 serving={serving === 2}
                 handleIncrement={handleIncrement2}
                 name="Player 2"
+                disabled={winner > 0}
             />
         </div>
         <Winner winner={winner} />

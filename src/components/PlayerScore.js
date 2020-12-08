@@ -1,4 +1,4 @@
-const PlayerScore = ({ player, serving, handleIncrement, name }) => (
+const PlayerScore = ({ player, serving, handleIncrement, name, disabled }) => (
     <div className="col-md-6 mt-4">
         <div
             className={
@@ -11,6 +11,7 @@ const PlayerScore = ({ player, serving, handleIncrement, name }) => (
             </div>
             <div className="card-footer">
                 <button
+                    disabled={disabled}
                     onClick={handleIncrement}
                     className="form-control btn btn-success"
                 >
