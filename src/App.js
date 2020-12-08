@@ -1,7 +1,8 @@
-import PlayerScore from "../src/components/PlayerScore";
-import Header from "../src/components/Header";
-import Winner from "../src/components/Winner";
-import Reset from "../src/components/Reset";
+import Player1 from "./components/PlayerScore/PlayerScore1";
+import Player2 from "./components/PlayerScore/PlayerScore2";
+import Header from "./components/Header";
+import Winner from "./components/Winner";
+import Reset from "./components/Reset";
 
 const App = ({
     player1,
@@ -16,23 +17,11 @@ const App = ({
         <Header title="PING PONG" />
 
         <div className="row mb-4">
-            <PlayerScore
-                player={player1}
-                serving={serving === 1}
-                handleIncrement={handleIncrement1}
-                name="Player 1"
-                disabled={winner > 0}
-            />
+            <Player1 handleIncrement={handleIncrement1} />
 
-            <PlayerScore
-                player={player2}
-                serving={serving === 2}
-                handleIncrement={handleIncrement2}
-                name="Player 2"
-                disabled={winner > 0}
-            />
+            <Player2 handleIncrement={handleIncrement2} />
         </div>
-        <Winner winner={winner} />
+        <Winner />
 
         <hr />
 
