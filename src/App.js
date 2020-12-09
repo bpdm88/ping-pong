@@ -3,18 +3,13 @@ import Player2 from "./components/PlayerScore/PlayerScore2";
 import Header from "./components/Header";
 import Winner from "./components/Winner";
 import Reset from "./components/Reset";
+import Form from "./components/Form";
 
-const App = ({
-    player1,
-    player2,
-    serving,
-    winner,
-    handleIncrement1,
-    handleIncrement2,
-    handleReset,
-}) => (
+const App = () => (
     <>
         <Header title="PING PONG" />
+
+        <Form />
 
         <div className="row mb-4">
             <Player1 />

@@ -15,3 +15,9 @@ export const increment2 = () => {
         type: "INCREMENT2",
     };
 };
+
+export const start = () => {
+    return {
+        type: "START_GAME",
+    };
+};
