@@ -34,9 +34,11 @@ const server = (state) => ({
 
 const winner = (state) => ({
     ...state,
-    winner: winningScore(state) ? whoWon(state) : 0,
+    winner: winningScore(state) && twoPoints(state) ? whoWon(state) : 0,
 });
 
 const winningScore = (state) => state.player1 >= 21 || state.player2 >= 21;
+
+const twoPoints = (state) => Math.abs(state.player1 - state.player2) >= 2;
 
 const whoWon = (state) => (state.player1 > state.player2 ? 1 : 2);

@@ -17,15 +17,15 @@ const App = ({
         <Header title="PING PONG" />
 
         <div className="row mb-4">
-            <Player1 handleIncrement={handleIncrement1} />
+            <Player1 />
 
-            <Player2 handleIncrement={handleIncrement2} />
+            <Player2 />
         </div>
         <Winner />
 
         <hr />
 
-        <Reset handleReset={handleReset} />
+        <Reset />
     </>
 );
 
