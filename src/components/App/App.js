@@ -4,7 +4,7 @@ import Game from "../Game";
 
 const App = ({ gameStarted }) => (
     <>
-        <Header title="PING PONG" />
+        <Header title="Ping Pong" />
 
         {!gameStarted ? <Form /> : <Game />}
     </>
