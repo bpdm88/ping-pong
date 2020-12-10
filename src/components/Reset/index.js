@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import Reset from "./Reset";
-import { reset } from "../../data/actions";
+import { reset } from "../../action/state";
 
 let mapDispatchToProps = (dispatch) => {
     return {

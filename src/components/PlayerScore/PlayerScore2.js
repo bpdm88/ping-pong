@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import PlayerScore from "./PlayerScore";
-import { increment2 } from "../../data/actions";
+import { increment2 } from "../../action/state";
 
 let mapStateToProps = (state) => {
     return {

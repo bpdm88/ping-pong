@@ -1,10 +1,10 @@
 import { connect } from "react-redux";
 import Form from "./Form";
-import { start } from "../../data/actions";
+import { postGame } from "../../action/api";
 
 let mapDispatchToProps = (dispatch) => {
     return {
-        handleStartGame: (data) => dispatch(start(data)),
+        handleStartGame: (data) => dispatch(postGame(data)),
     };
 };
 
