@@ -3,8 +3,8 @@ const initial = {
     player2: 0,
     server: 1,
     winner: 0,
-    playerName1: "",
-    playerName2: "",
+    playerName1: "Player 1",
+    playerName2: "Player 2",
     points: 21,
     alternate: 5,
 };

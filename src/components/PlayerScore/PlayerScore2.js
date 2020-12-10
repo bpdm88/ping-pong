@@ -6,7 +6,7 @@ let mapStateToProps = (state) => {
     return {
         player: state.player2,
         serving: state.server === 2,
-        name: "Player 2",
+        name: state.playerName2,
         disabled: state.winner > 0,
     };
 };
