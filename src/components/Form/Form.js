@@ -5,25 +5,25 @@ class Form extends React.Component {
         super(props);
 
         this.state = {
-            player1: "",
-            player2: "",
+            playerName1: "",
+            playerName2: "",
             points: 21,
             alternate: 5,
         };
 
-        this.handleChangePlayer1 = this.handleChangePlayer1.bind(this);
-        this.handleChangePlayer2 = this.handleChangePlayer2.bind(this);
+        this.handleChangePlayerName1 = this.handleChangePlayerName1.bind(this);
+        this.handleChangePlayerName2 = this.handleChangePlayerName2.bind(this);
         this.handleChangePoints = this.handleChangePoints.bind(this);
         this.handleChangeAlternate = this.handleChangeAlternate.bind(this);
-        this.handleStartGame = this.handleStartGame.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleChangePlayer1(event) {
-        this.setState({ player1: event.currentTarget.value });
+    handleChangePlayerName1(event) {
+        this.setState({ playerName1: event.currentTarget.value });
     }
 
-    handleChangePlayer2(event) {
-        this.setState({ player2: event.currentTarget.value });
+    handleChangePlayerName2(event) {
+        this.setState({ playerName2: event.currentTarget.value });
     }
 
     handleChangePoints(event) {
@@ -34,29 +34,31 @@ class Form extends React.Component {
         this.setState({ alternate: event.currentTarget.value });
     }
 
-    handleStartGame(event) {
+    handleSubmit(event) {
         event.preventDefault();
+
+        this.props.handleStartGame({ ...this.state });
     }
 
     render() {
-        let { player1, player2, points, alternate } = this.state;
+        let { playerName1, playerName2, points, alternate } = this.state;
 
         return (
-            <form className="form-group" onSubmit={this.handleStartGame}>
+            <form className="form-group" onSubmit={this.handleSubmit}>
                 <label htmlFor="player-name">Player 1</label>
                 <input
                     className="form-control"
                     id="player-name"
-                    onChange={this.handleChangePlayer1}
-                    value={player1}
+                    onChange={this.handleChangePlayerName1}
+                    value={playerName1}
                 />
 
                 <label htmlFor="player-name">Player 2</label>
                 <input
                     className="form-control"
                     id="player-name"
-                    onChange={this.handleChangePlayer2}
-                    value={player2}
+                    onChange={this.handleChangePlayerName2}
+                    value={playerName2}
                 />
 
                 <label htmlFor="points">Winning Score</label>

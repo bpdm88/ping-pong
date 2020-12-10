@@ -16,8 +16,12 @@ export const increment2 = () => {
     };
 };
 
-export const start = () => {
+export const start = (data) => {
     return {
         type: "START_GAME",
+        playerName1: data.playerName1,
+        playerName2: data.playerName2,
+        points: data.points,
+        alternate: data.alternate,
     };
 };

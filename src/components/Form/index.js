@@ -4,7 +4,7 @@ import { start } from "../../data/actions";
 
 let mapDispatchToProps = (dispatch) => {
     return {
-        handleStartGame: () => dispatch(start()),
+        handleStartGame: (data) => dispatch(start(data)),
     };
 };
 
