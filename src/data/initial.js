@@ -7,6 +7,7 @@ const initial = {
     playerName2: "Player 2",
     points: 21,
     alternate: 5,
+    gameStarted: false,
 };
 
 export default initial;

@@ -25,6 +25,7 @@ const startGame = (state, action) => ({
     playerName2: action.playerName2,
     points: action.points,
     alternate: action.alternate,
+    gameStarted: true,
 });
 
 // Player & Server Logic
