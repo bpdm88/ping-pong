@@ -9,6 +9,7 @@ const initial = {
     alternate: 5,
     gameStarted: false,
     id: 0,
+    player: 0,
 };
 
 export default initial;

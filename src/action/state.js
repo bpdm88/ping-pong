@@ -9,17 +9,17 @@ export const start = (data) => {
     };
 };
 
-export const increment1 = () => {
+export const increment = (player) => {
     return {
-        type: "INCREMENT1",
+        type: player === 1 ? "INCREMENT1" : "INCREMENT2",
     };
 };
 
-export const increment2 = () => {
-    return {
-        type: "INCREMENT2",
-    };
-};
+// export const increment2 = () => {
+//     return {
+//         type: "INCREMENT2",
+//     };
+// };
 
 export const reset = () => {
     return {
