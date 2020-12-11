@@ -3,8 +3,9 @@ export const start = (data) => {
         type: "START_GAME",
         playerName1: data.player_1.name,
         playerName2: data.player_2.name,
-        points: data.wining_score,
+        points: data.winning_score,
         alternate: data.change_serve,
+        id: data.id,
     };
 };
 

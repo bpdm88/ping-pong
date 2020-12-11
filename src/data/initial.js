@@ -8,6 +8,7 @@ const initial = {
     points: 21,
     alternate: 5,
     gameStarted: false,
+    id: 0,
 };
 
 export default initial;
